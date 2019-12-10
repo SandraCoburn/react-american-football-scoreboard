@@ -3,10 +3,16 @@ import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
 
+
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
+  const [downValue, setDownValue] = useState(0);
+  const [ballOnValue, setBallOnValue] = useState(0);
+ 
+  
+ 
 
   return (
     <div className="container">
@@ -25,7 +31,7 @@ function App() {
             <div className="away__score">{awayScore}</div>
           </div>
         </div>
-        <BottomRow />
+        <BottomRow downValue={downValue} ballOnValue={ballOnValue}/>
       </section>
       <section className="buttons">
         <div className="homeButtons">
@@ -36,6 +42,10 @@ function App() {
         <div className="awayButtons">
           <button className="awayButtons__touchdown" onClick={() => setAwayScore(awayScore + 7)}>Away Touchdown</button>
           <button className="awayButtons__fieldGoal" onClick={() => setAwayScore(awayScore + 3)}>Away Field Goal</button>
+        </div>
+        <div className="quarterButtons">
+          <button className="quarterButtons_down" onClick={() => setDownValue(downValue + 1)}>Down Value</button>
+          <button className="quarterButtons_ballOn" onClick={() => setBallOnValue(ballOnValue + 3)}>Ball On Value </button>
         </div>
       </section>
     </div>
