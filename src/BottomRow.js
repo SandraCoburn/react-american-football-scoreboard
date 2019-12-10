@@ -4,12 +4,9 @@ import "./App.css";
 
 const BottomRow = (props) => {
 
-  
-    
-    const downValue = props.downValue;
-    const ballOnValue = props.ballOnValue;
+  const downValue = props.downValue;
+  const ballOnValue = props.ballOnValue;
 
-  
   return (
     <div className="bottomRow">
       <div className="down">
