@@ -10,20 +10,19 @@ function App() {
   const [awayScore, setAwayScore] = useState(0); 
   const [downValue, setDownValue] = useState(0);
   const [ballOnValue, setBallOnValue] = useState(0);
-  const [seconds, setSeconds] = useState(50);
+  const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   
  useEffect(() => {
   const interval = setInterval(() => {
       setSeconds(seconds + 1);
    }, 1000);
+   
    //after seconds was updated
-   //TODO: 
    if(seconds === 60){
      setMinutes(minutes + 1);
      setSeconds(0);
    }
-   
    return () => clearInterval(interval);
   }, [seconds]);
 

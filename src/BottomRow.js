@@ -1,4 +1,5 @@
-import React from "react";
+//import React from "react";
+import React from "react"
 
 import "./App.css";
 
@@ -6,6 +7,10 @@ const BottomRow = (props) => {
 
   const downValue = props.downValue;
   const ballOnValue = props.ballOnValue;
+
+  // if(downValue > 4){
+  //   downValue = downValue - 4;
+  // }
 
   return (
     <div className="bottomRow">
